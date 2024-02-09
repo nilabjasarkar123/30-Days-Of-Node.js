@@ -6,13 +6,13 @@ function errorHandler(err, req, res, next) {
 }
 
 function positiveIntegerHandler(req, res, next) {
-  const { number } = req.query;
-  if (Number.isInteger(parseInt(number)) && parseInt(number) > 0) {
-    res.status(200).json({ message: "Success! The number is a positive integer." });
-  } else {
-    next(new Error("'number' must be a positive integer"));
+    const { number } = req.query;
+    if (Number.isInteger(parseInt(number)) && parseInt(number) > 0) {
+      res.status(200).send("Success! The number is a positive integer.");
+    } else {
+      next(new Error("'number' must be a positive integer"));
+    }
   }
-}
 
 app.get('/positive', positiveIntegerHandler);
 app.use(errorHandler);
