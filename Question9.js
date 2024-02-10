@@ -1,11 +1,13 @@
-// Which of the following are examples of node modules?
+/*
+Which of the following are examples of node modules?
 
-// a. Express
+a. Express
 
-// b. Body-parser
+b. Body-parser
 
-// c. Socket.io
+c. Socket.io
 
-// d. All of the above
+d. All of the above
 
-// ans : d. all of the above
+ans : d. all of the above
+*/
