@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket Example</title>
+  </head>
+  <body>
+    <h1>WebSocket Example</h1>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+      const webSocket = new WebSocket("ws://localhost:3000"); // Update the WebSocket URL with your server URL
+
+      webSocket.onopen = function () {
+        console.log("WebSocket connection established");
+      };
+
+      webSocket.onmessage = function (event) {
+        const messagesDiv = document.getElementById("messages");
+        messagesDiv.innerHTML += "<p>Server says: " + event.data + "</p>";
+      };
+
+      function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        webSocket.send(messageInput.value);
+        messageInput.value = "";
+      }
+    </script>
+  </body>
+</html>
