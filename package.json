@@ -6,6 +6,7 @@
     "http-cache-middleware": "^1.4.1",
     "jsonwebtoken": "^9.0.2",
     "memory-cache": "^0.2.0",
+    "mongoose": "^8.1.2",
     "socket.io": "^4.7.4"
   }
 }
