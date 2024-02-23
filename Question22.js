@@ -10,7 +10,6 @@ const productSchema = new mongoose.Schema({
   quantity: Number,
 });
 
-
 // Create a Mongoose model for the Product schema
 const Product = mongoose.model("Product", productSchema);
 
@@ -33,13 +32,13 @@ connectToMongoDB();
  * @returns {Promise} - Promise that resolves with the created product
  */
 async function createProduct(name, price, quantity) {
-    try {
-      const newProduct = new Product({ name, price, quantity });
-      return await newProduct.save();
-    } catch (error) {
-      throw new Error(`Error creating product: ${error.message}`);
-    }
+  try {
+    const newProduct = new Product({ name, price, quantity });
+    return await newProduct.save();
+  } catch (error) {
+    throw new Error(`Error creating product: ${error.message}`);
   }
+}
 
 /**
  * Retrieves all products from MongoDB
@@ -85,6 +84,7 @@ async function deleteProduct(productId) {
 // createProduct("mango", 5, 20);
 // createProduct("banana", 2, 10);
 //deleteProduct('65d7754d668c037c47033a7a')
+
 // module.exports = {
 //   createProduct,
 //   getAllProducts,
